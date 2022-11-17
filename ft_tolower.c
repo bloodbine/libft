@@ -6,7 +6,7 @@
 /*   By: gpasztor <gpasztor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:31:45 by gpasztor          #+#    #+#             */
-/*   Updated: 2022/11/14 14:19:44 by gpasztor         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:11:55 by gpasztor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,8 @@ int	ft_tolower(int c)
 	int	nc;
 
 	if (c >= 'A' && c <= 'Z')
-	{
 		nc = c + 32;
-	}
 	else
-	{
 		nc = c;
-	}
 	return (nc);
 }

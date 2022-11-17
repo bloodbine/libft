@@ -6,7 +6,7 @@
 /*   By: gpasztor <gpasztor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:03:06 by gpasztor          #+#    #+#             */
-/*   Updated: 2022/11/14 14:19:52 by gpasztor         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:17:48 by gpasztor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (*s != '\0')
-	{
-		s++;
+	while (s[i])
 		i++;
-	}
 	return (i);
 }

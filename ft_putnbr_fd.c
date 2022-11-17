@@ -6,7 +6,7 @@
 /*   By: gpasztor <gpasztor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:52:55 by gpasztor          #+#    #+#             */
-/*   Updated: 2022/11/14 14:20:00 by gpasztor         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:10:49 by gpasztor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ void	ft_putnbr_fd(int n, int fd)
 			ft_putchar_fd('-', fd);
 		}
 		if (n > 9)
-		{
 			ft_putnbr_fd(n / 10, fd);
-		}
 		ft_putchar_fd((n % 10) + '0', fd);
 	}
 }

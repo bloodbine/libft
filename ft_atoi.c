@@ -6,7 +6,7 @@
 /*   By: gpasztor <gpasztor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:21:22 by gpasztor          #+#    #+#             */
-/*   Updated: 2022/11/14 14:19:38 by gpasztor         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:18:44 by gpasztor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_atoi(const char *str)
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		value += (int)str[i] - '0';
+		value += str[i] - '0';
 		if (str[i + 1] >= '0' && str[i + 1] <= '9')
 			value *= 10;
 		i++;

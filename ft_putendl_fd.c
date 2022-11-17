@@ -6,7 +6,7 @@
 /*   By: gpasztor <gpasztor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:48:20 by gpasztor          #+#    #+#             */
-/*   Updated: 2022/11/14 14:20:01 by gpasztor         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:49:29 by gpasztor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ void	ft_putendl_fd(char *s, int fd)
 	while (s[i] != '\0')
 		write(fd, &s[i++], 1);
 	write(fd, "\n", 1);
-	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: gpasztor <gpasztor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 13:31:45 by gpasztor          #+#    #+#             */
-/*   Updated: 2022/11/14 14:19:58 by gpasztor         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:34:21 by gpasztor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int	ft_assignation(char const *s, char c, char **parent, int k)
 		{
 			parent[k] = ft_substr(s, j, i - j);
 			if (!parent[k])
-				return (0);
+				return (1);
 			k++;
 		}
 		i++;
@@ -63,10 +63,10 @@ static int	ft_assignation(char const *s, char c, char **parent, int k)
 		{
 			parent[k] = ft_substr(s, j, i - j);
 			if (!parent[k])
-				return (0);
+				return (1);
 		}
 	}
-	return (1);
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
@@ -84,7 +84,7 @@ char	**ft_split(char const *s, char c)
 	assign_status = ft_assignation(s, c, parent, 0);
 	if (!parent)
 		return (NULL);
-	if (!assign_status)
+	if (assign_status)
 	{
 		ft_free_all(parent);
 		return (NULL);

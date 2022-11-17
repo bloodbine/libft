@@ -6,7 +6,7 @@
 /*   By: gpasztor <gpasztor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:46:15 by gpasztor          #+#    #+#             */
-/*   Updated: 2022/11/14 14:19:35 by gpasztor         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:02:54 by gpasztor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,9 @@
 int	ft_isalnum(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-	{
 		return (1);
-	}
 	else if (c >= '0' && c <= '9')
-	{
 		return (1);
-	}
 	else
-	{
 		return (0);
-	}
 }

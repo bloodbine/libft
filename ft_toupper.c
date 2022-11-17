@@ -6,7 +6,7 @@
 /*   By: gpasztor <gpasztor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:56:40 by gpasztor          #+#    #+#             */
-/*   Updated: 2022/11/14 14:19:43 by gpasztor         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:12:05 by gpasztor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,8 @@ int	ft_toupper(int c)
 	int	nc;
 
 	if (c >= 'a' && c <= 'z')
-	{
 		nc = c - 32;
-	}
 	else
-	{
 		nc = c;
-	}
 	return (nc);
 }
