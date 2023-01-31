@@ -6,7 +6,7 @@
 /*   By: gpasztor <gpasztor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:58:40 by gpasztor          #+#    #+#             */
-/*   Updated: 2022/11/17 14:32:17 by gpasztor         ###   ########.fr       */
+/*   Updated: 2023/01/31 08:22:12 by gpasztor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include "ft_printf/ft_printf.h"
+# include "get_next_line/get_next_line.h"
 
 typedef struct s_list
 {
