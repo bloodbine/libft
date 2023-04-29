@@ -6,7 +6,7 @@
 /*   By: gpasztor <gpasztor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 07:50:12 by gpasztor          #+#    #+#             */
-/*   Updated: 2023/04/29 16:32:10 by gpasztor         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:46:44 by gpasztor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 static void	ft_check_params(const char ch, va_list argsp, int fd, int *count)
 {
 	if (ch == 'c')
-		ft_putchar(va_arg(argsp, int), fd, count);
+		ft_fputchar(va_arg(argsp, int), fd, count);
 	else if (ch == 's')
-		ft_putstr(va_arg(argsp, char *), fd, count);
+		ft_fputstr(va_arg(argsp, char *), fd, count);
 	else if (ch == 'd' || ch == 'i')
-		ft_putdec(va_arg(argsp, int), fd, count);
+		ft_fputdec(va_arg(argsp, int), fd, count);
 	else if (ch == 'u')
-		ft_putunsdec(va_arg(argsp, unsigned int), fd, count);
+		ft_fputunsdec(va_arg(argsp, unsigned int), fd, count);
 	else if (ch == 'x')
-		ft_putlhex(va_arg(argsp, unsigned int), fd, count);
+		ft_fputlhex(va_arg(argsp, unsigned int), fd, count);
 	else if (ch == 'X')
-		ft_putuhex(va_arg(argsp, unsigned int), fd, count);
+		ft_fputuhex(va_arg(argsp, unsigned int), fd, count);
 	else if (ch == 'p')
-		ft_putptr(va_arg(argsp, unsigned long long), 0, fd, count);
+		ft_fputptr(va_arg(argsp, unsigned long long), 0, fd, count);
 	else if (ch == '%')
-		ft_putchar('%', fd, count);
+		ft_fputchar('%', fd, count);
 }
 
 int	ft_fprintf(int fd, const char *str, ...)
@@ -46,7 +46,7 @@ int	ft_fprintf(int fd, const char *str, ...)
 		if (str[i] == '%')
 			ft_check_params(str[++i], argsp, fd, &count);
 		else
-			ft_putchar(str[i], fd, &count);
+			ft_fputchar(str[i], fd, &count);
 		if (count < 0)
 			return (va_end(argsp), -1);
 	}

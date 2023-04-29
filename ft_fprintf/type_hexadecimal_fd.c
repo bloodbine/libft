@@ -1,63 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_hexadecimal.c                                 :+:      :+:    :+:   */
+/*   type_hexadecimal_fd.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpasztor <gpasztor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:26:50 by gpasztor          #+#    #+#             */
-/*   Updated: 2023/04/29 16:30:54 by gpasztor         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:46:28 by gpasztor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fprintf.h"
 
-void	ft_putlhex(unsigned int num, int fd, int *count)
+void	ft_fputlhex(unsigned int num, int fd, int *count)
 {
 	if (num > 16)
 	{
-		ft_putlhex(num / 16, fd, count);
+		ft_fputlhex(num / 16, fd, count);
 		if (*count == -1)
 			return ;
 	}
 	if (num == 16)
-		ft_putstr("10", fd, count);
+		ft_fputstr("10", fd, count);
 	else if (num % 16 < 10)
-		ft_putchar(((num % 16) + '0'), fd, count);
+		ft_fputchar(((num % 16) + '0'), fd, count);
 	else
-		ft_putchar(((num % 16) - 10 + 'a'), fd, count);
+		ft_fputchar(((num % 16) - 10 + 'a'), fd, count);
 }
 
-void	ft_putuhex(unsigned int num, int fd, int *count)
+void	ft_fputuhex(unsigned int num, int fd, int *count)
 {
 	if (num > 16)
 	{
-		ft_putuhex(num / 16, fd, count);
+		ft_fputuhex(num / 16, fd, count);
 		if (*count == -1)
 			return ;
 	}
 	if (num == 16)
-		ft_putstr("10", fd, count);
+		ft_fputstr("10", fd, count);
 	else if (num % 16 < 10)
-		ft_putchar((num % 16) + '0', fd, count);
+		ft_fputchar((num % 16) + '0', fd, count);
 	else
-		count += ft_putchar(((num % 16) - 10 + 'A'), fd, count);
+		count += ft_fputchar(((num % 16) - 10 + 'A'), fd, count);
 }
 
-int	ft_putptr(unsigned long long ptr, int ptrcount, int fd, int *count)
+int	ft_fputptr(unsigned long long ptr, int ptrcount, int fd, int *count)
 {
 	if (ptr > 16)
-		ptrcount += ft_putptr(ptr / 16, ptrcount, fd, count);
+		ptrcount += ft_fputptr(ptr / 16, ptrcount, fd, count);
 	if ((ptr / 16 == 0 || ptr % 16 == 0) && ptrcount == 0)
-		ptrcount += ft_putstr("0x", fd, count);
+		ptrcount += ft_fputstr("0x", fd, count);
 	if (*count == -1)
 		return (-1);
 	if (ptr == 16)
-		ptrcount += ft_putstr("10", fd, count);
+		ptrcount += ft_fputstr("10", fd, count);
 	else if (ptr % 16 < 10)
-		ptrcount += ft_putchar(((ptr % 16) + '0'), fd, count);
+		ptrcount += ft_fputchar(((ptr % 16) + '0'), fd, count);
 	else
-		ptrcount += ft_putchar(((ptr % 16) - 10 + 'a'), fd, count);
+		ptrcount += ft_fputchar(((ptr % 16) - 10 + 'a'), fd, count);
 	if (*count == -1)
 		return (-1);
 	return (ptrcount);

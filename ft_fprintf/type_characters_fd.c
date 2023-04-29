@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_characters.c                                  :+:      :+:    :+:   */
+/*   type_characters_fd.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpasztor <gpasztor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 15:34:23 by gpasztor          #+#    #+#             */
-/*   Updated: 2023/04/29 16:29:57 by gpasztor         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:45:52 by gpasztor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fprintf.h"
 
-int	ft_putchar(char ch, int fd, int *count)
+int	ft_fputchar(char ch, int fd, int *count)
 {
 	int	status;
 
@@ -25,19 +25,19 @@ int	ft_putchar(char ch, int fd, int *count)
 	return (status);
 }
 
-int	ft_putstr(char *str, int fd, int *count)
+int	ft_fputstr(char *str, int fd, int *count)
 {
 	int	i;
 
 	i = -1;
 	if (!str)
 	{
-		i += ft_putstr("(null)", fd, count);
+		i += ft_fputstr("(null)", fd, count);
 		return (i);
 	}
 	while (str[++i])
 	{
-		ft_putchar(str[i], fd, count);
+		ft_fputchar(str[i], fd, count);
 		if (*count == -1)
 			return (-1);
 	}
