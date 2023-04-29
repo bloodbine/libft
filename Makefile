@@ -1,6 +1,6 @@
 NAME	= libft.a
 
-VPATH 	= ft_printf:get_next_line
+VPATH 	= ft_printf:get_next_line:ft_fprintf
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
@@ -44,7 +44,12 @@ SRC		= ft_isalpha.c			\
 		type_hexadecimal.c		\
 		ft_printf.c				\
 		get_next_line_utils.c 	\
-		get_next_line.c
+		get_next_line.c			\
+		ft_fprintf.c			\
+		type_characters_fd.c	\
+		type_decimal_fd.c		\
+		type_hexadecimal_fd.c
+
 
 BONUS = ft_lstnew.c			\
 		ft_lstadd_front.c	\
